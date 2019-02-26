@@ -11,7 +11,9 @@ function Get-FreshTicketByID {
 	try {
 	    New-FreshRequest -Method $Method -Resource $Resource
 	} catch {
-	    Write-Warning $_
+	    Write-Warning $_.InvocationInfo.ScriptName
+	    Write-Warning $_.InvocationInfo.Line
+	    Write-Warning $_.Exception.Message
 	}
     }
 }

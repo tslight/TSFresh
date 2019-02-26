@@ -14,7 +14,7 @@ function New-FreshStarterObject {
 	    $Asset      = Get-FreshTicketByID $DisplayId | Get-FreshNoteString -String "Dog Tag"
 	    $Breed      = Get-FreshTicketByID $DisplayId | Get-FreshNoteString -String "Dog Breed"
 	    $Status     = Get-FreshTicketByID $DisplayId | Get-FreshTicketStatus
-	    $TicketUrl	= "$URL/helpdesk/tickets/$DisplayId"
+	    $TicketUrl	= "$URLv1/helpdesk/tickets/$DisplayId"
 	    $Properties		= [ordered]@{
 		Department	= $Requests.Department
 		SubDepartment	= $Requests.'Sub Department'
@@ -30,7 +30,9 @@ function New-FreshStarterObject {
 	    }
 	    New-Object PSObject -Property $Properties
 	} catch {
-	    Write-Warning $_
+	    Write-Warning $_.InvocationInfo.ScriptName
+	    Write-Warning $_.InvocationInfo.Line
+	    Write-Warning $_.Exception.Message
 	}
     }
 }

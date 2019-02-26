@@ -26,6 +26,7 @@ if (Test-Path "$PSScriptRoot\$ConfigFile") {
 	    'Content-Type'  = 'application/json'
 	}
 	$URL		    = $Config.URL
+	$URLv1              = $Config.URLv1
 	$EmailAddress       = $Config.EmailAddress
     } catch {
 	Write-Warning "Invalid configuration data in $ConfigFile."
@@ -39,6 +40,7 @@ if (Test-Path "$PSScriptRoot\$ConfigFile") {
 @{
     FreshAPIKeyFile = ""
     URL             = ""
+    URLv1           = ""
     EmailAddress    = ""
 }
 "@ | Out-File -Encoding UTF8 -FilePath "$PSScriptRoot\$ConfigFile"
