@@ -31,7 +31,7 @@ function Export-FreshTicketYear {
 	    }
 	    if (Get-ChildItem "$MonthPath\*.csv") {
 		Write-Host -Back Black -Fore Magenta "Creating $YearPath\$Month.xlsx from Csvs at $MonthPath..."
-		Get-ChildItem "$MonthPath\*.csv" | ConvertTo-XlsxFromCsv -Xlsx "$YearPath\$Month"
+		Get-ChildItem "$MonthPath\*.csv" | Convert-CsvToXls -Xlsx "$YearPath\$Month"
 	    }
 	}
     }
