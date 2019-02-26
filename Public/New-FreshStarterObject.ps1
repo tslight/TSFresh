@@ -11,7 +11,8 @@ function New-FreshStarterObject {
 	    $Requests	= (Get-FreshRequestedItems $DisplayId).requested_item.requested_item_values
 	    $FirstName	= $Requests.'First name'
 	    $Surname	= $Requests.Surname
-	    $Asset      = Get-FreshTicketByID $DisplayId | Get-FreshAssetTag
+	    $Asset      = Get-FreshTicketByID $DisplayId | Get-FreshNoteString -String "Dog Tag"
+	    $Breed      = Get-FreshTicketByID $DisplayId | Get-FreshNoteString -String "Dog Breed"
 	    $Status     = Get-FreshTicketByID $DisplayId | Get-FreshTicketStatus
 	    $TicketUrl	= "$URL/helpdesk/tickets/$DisplayId"
 	    $Properties		= [ordered]@{
@@ -22,6 +23,7 @@ function New-FreshStarterObject {
 		StartDate	= $Requests.'Start date'.SubString(0,10)
 		Manager		= $Requests.'Line Manager'
 		Model		= $Requests.Model
+		Breed           = $Breed
 		Asset           = $Asset
 		Status          = $Status
 		URL             = $TicketUrl

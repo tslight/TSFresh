@@ -14,13 +14,13 @@ function Get-FreshFailedStarterNotes {
     process {
 	$DisplayId = $Note.display_id
 
-	if ($Note.body -cmatch '.*FAILED.*') {
+	if ($Note.body -cmatch '.*FAILED.*|.*ABORTING.*') {
 	    if ($Text) {
 		$Failed = $Note.body
 		$Failed += "$Url/$DisplayId"
 	    } elseif ($Html) {
 		$Failed  = $Note.body_html
-		$Failed += "<br><br>$Url/$DisplayId<br><br>"
+		$Failed += "<br>$Url/$DisplayId<br><br><br>"
 	    } else {
 		$Failed  = $Note
 	    }
