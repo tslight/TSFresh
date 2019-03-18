@@ -16,5 +16,5 @@ function New-FreshStartersReport {
     $Years   = $Years | New-YearsObject
     $Years   = $Tickets | Get-FreshStartersYears -Years $Years
 
-    Export-FreshTicketYears -Years $Years -Path $Path
+    Export-Years -Years $Years -Path $Path
 }
