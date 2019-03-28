@@ -1,4 +1,4 @@
-Function Get-FreshStartersYears {
+function Get-FreshTicketYears {
     [CmdletBinding(SupportsShouldProcess)]
     Param (
 	[Parameter(Mandatory,ValueFromPipeline)]
