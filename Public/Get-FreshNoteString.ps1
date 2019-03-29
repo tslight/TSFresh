@@ -10,7 +10,6 @@ function Get-FreshNoteString {
     .PARAMETER Ticket
     A Fresh ticket object
     #>
-
     [CmdletBinding(SupportsShouldProcess)]
     Param (
 	[Parameter(Mandatory,ValueFromPipeline)]
