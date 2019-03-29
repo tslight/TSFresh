@@ -6,8 +6,9 @@ function Get-FreshTicketByID {
     )
 
     process {
-	[string]$Method = "GET"
-	[string]$Resource = "/helpdesk/tickets/" + $TicketId + ".json"
+	$Method = "GET"
+	$Resource = "/helpdesk/tickets/$TicketId.json"
+
 	try {
 	    New-FreshRequest -Method $Method -Resource $Resource
 	} catch {

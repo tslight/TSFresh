@@ -1,10 +1,10 @@
 function Get-FreshTicketsByFilter {
     param (
-	[Parameter(Mandatory = $true, Position = 0)]
+	[Parameter(Mandatory)]
 	[string]$Filter
     )
 
-    $HasContent = $true
+    $HasContent = $True
     $PageNumber = 1
     $Tickets = @()
 
@@ -17,7 +17,7 @@ function Get-FreshTicketsByFilter {
 	    }
 	    $PageNumber++
 	} else {
-	    $HasContent = $false
+	    $HasContent = $False
 	}
     }
 

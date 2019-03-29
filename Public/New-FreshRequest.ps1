@@ -6,7 +6,7 @@ function New-FreshRequest {
 	[Parameter(Mandatory,Position=1)]
 	[string]$Resource,
 	[Parameter(Position=2)]
-	[string]$json
+	[string]$Json
     )
 
     $Uri = $Url + $Resource
@@ -19,7 +19,7 @@ function New-FreshRequest {
     }
 
     if ($Method -eq "PUT" -or $Method -eq "POST") {
-	$InvokeArgs.Add("Body",$json)
+	$InvokeArgs.Add("Body",$Json)
     }
 
     try {

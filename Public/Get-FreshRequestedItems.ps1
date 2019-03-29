@@ -1,11 +1,11 @@
 function Get-FreshRequestedItems {
     param (
-	[Parameter(Mandatory = $true, Position = 0)]
-	[Int32]$TicketID
+	[Parameter(Mandatory)]
+	[int]$TicketID
     )
 
     $Resource = "/helpdesk/tickets/$TicketID/requested_items.json"
+    $Method = "GET"
 
-    [string]$method = "GET"
-    return New-FreshRequest -method $method -resource $Resource
+    New-FreshRequest -Method $Method -Resource $Resource
 }

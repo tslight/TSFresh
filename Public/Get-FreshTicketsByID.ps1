@@ -1,6 +1,6 @@
 function Get-FreshTicketsByID {
     param (
-	[Parameter(Mandatory,Position=0)]
+	[Parameter(Mandatory)]
 	[int]$ViewID
     )
 
