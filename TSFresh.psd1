@@ -51,7 +51,11 @@
     # ProcessorArchitecture = ''
 
     # Modules that must be imported into the global environment prior to importing this module
-    RequiredModules = @('MCSAD', 'TSDate', 'TSUtils')
+    RequiredModules = @(
+	'TSAD'
+	'TSDate'
+	'TSUtils'
+    )
 
     # Assemblies that must be loaded prior to importing this module
     # RequiredAssemblies = @()
